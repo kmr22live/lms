@@ -269,7 +269,7 @@ export default function AddMembers() {
                   }, 2000);
                 }
                 if (!context.isRemoveMember) {
-                  console.log("im 12121212121");
+                  
                   context.setMemberData([
                     ...context.memberData,
                     { ...formik.values, id: uuidv4() },
