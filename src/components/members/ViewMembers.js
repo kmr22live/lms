@@ -13,7 +13,6 @@ export default function ViewMembers() {
   };
 
   const handleReturn = (e) => {
-    console.log(e.target.value);
 
     context.setMemberData(
       context.memberData.map((el) =>
