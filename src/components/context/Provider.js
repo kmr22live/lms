@@ -1,6 +1,6 @@
 import Context from "./Context";
 import books from "../booksdata";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import members from "../members/membersdata";
 
 export default function Provider(props) {
@@ -13,6 +13,9 @@ export default function Provider(props) {
   const [filteredMemberData, setFilteredMemberData] = useState(memberData);
   const [isRemoveMember, setIsRemoveMember] = useState(false);
   const [issuedBook, setissuedBook] = useState(0);
+   useEffect(() => {
+    setFilteredBookListData(bookListData);
+  }, [bookListData]);
 
   return (
     <Context.Provider
