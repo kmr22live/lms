@@ -49,7 +49,6 @@ export default function AddMembers() {
   const formik = useFormik({
     initialValues,
     onSubmit: (values) => {
-      console.log("im hereeeeeee");
       context.setMemberData([
         ...context.memberData,
         { ...values, id: uuidv4() },
@@ -268,7 +267,13 @@ export default function AddMembers() {
                     context.setFilteredMemberData(context.memberData);
                   }, 2000);
                 }
-                if (!context.isRemoveMember) {
+                if (
+                  formik.values.name != "" &&
+                  formik.values.email != "" &&
+                  formik.values.mobile != "" &&
+                  formik.values.address != "" &&
+                  !context.isRemoveMember
+                )  {
                   
                   context.setMemberData([
                     ...context.memberData,
