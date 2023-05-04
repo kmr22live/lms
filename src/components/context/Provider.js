@@ -16,6 +16,10 @@ export default function Provider(props) {
    useEffect(() => {
     setFilteredBookListData(bookListData);
   }, [bookListData]);
+  
+  useEffect(() => {
+    setFilteredMemberData(memberData);
+  }, [memberData]);
 
   return (
     <Context.Provider
